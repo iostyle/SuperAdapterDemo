@@ -1,17 +1,17 @@
 package sky.superadapterdemo.Acticity;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import sky.superadapterdemo.Adapter.CommonAdapter;
 import sky.superadapterdemo.Bean.PhoneBean;
 import sky.superadapterdemo.R;
-import sky.superadapterdemo.Adapter.AdapterWithSuperVIewHolder;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private ListView lv;
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         lv = (ListView) findViewById(R.id.main_lv);
-        lv.setAdapter(new AdapterWithSuperVIewHolder(this,phoneBeens));
+//        lv.setAdapter(new AdapterWithSuperViewHolder(this,phoneBeens));
+        lv.setAdapter(new CommonAdapter(this,phoneBeens));
     }
 }

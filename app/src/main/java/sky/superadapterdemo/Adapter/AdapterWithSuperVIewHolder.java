@@ -16,13 +16,13 @@ import sky.superadapterdemo.Utils.SuperViewHolder;
 /**
  * Created by SKYMAC on 17/1/31.
  */
-public class AdapterWithSuperVIewHolder extends BaseAdapter {
+public class AdapterWithSuperViewHolder extends BaseAdapter {
 
     private Context mContext;
     private LayoutInflater mInflater;
     private List<PhoneBean> mDatas;
 
-    public AdapterWithSuperVIewHolder(Context mContext, List<PhoneBean> mDatas) {
+    public AdapterWithSuperViewHolder(Context mContext, List<PhoneBean> mDatas) {
         this.mContext = mContext;
         this.mInflater = LayoutInflater.from(mContext);
         this.mDatas = mDatas;
