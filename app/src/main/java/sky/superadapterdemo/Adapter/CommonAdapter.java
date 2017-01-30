@@ -1,7 +1,6 @@
 package sky.superadapterdemo.Adapter;
 
 import android.content.Context;
-import android.widget.TextView;
 
 import java.util.List;
 
@@ -19,12 +18,12 @@ public class CommonAdapter extends SuperAdapter {
         super(mContext, mDatas);
     }
 
+
     @Override
     public void convert(SuperViewHolder holder, Object o) {
-        PhoneBean bean = (PhoneBean)o;
-        ((TextView) holder.getView(R.id.item_main_nameTv)).setText(bean.getName());
-        ((TextView) holder.getView(R.id.item_main_phoneNumberTv)).setText(bean.getPhoneNum());
+        PhoneBean bean = (PhoneBean) o;
+//        ((TextView) holder.getView(R.id.item_main_nameTv)).setText(bean.getName());
+//        ((TextView) holder.getView(R.id.item_main_phoneNumberTv)).setText(bean.getPhoneNum());
+        holder.setText(R.id.item_main_nameTv, bean.getName()).setText(R.id.item_main_phoneNumberTv, bean.getPhoneNum());
     }
-
-
 }

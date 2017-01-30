@@ -6,6 +6,7 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Created by SKYMAC on 17/1/31.
@@ -45,5 +46,31 @@ public class SuperViewHolder {
             mViews.put(viewId, view);
         }
         return (T) view;
+    }
+
+    public int getPosition() {
+        return this.mPosition;
+    }
+
+    /**
+     * --------------------------------------------------------
+     *                  自此向下为自定义可拓展方法
+     * --------------------------------------------------------
+     */
+
+    /**
+     * 这是一个TextView.setText()的方法,作为模版提供。
+     * @param viewId 控件ID
+     * @param text   内容
+     * @return 返回值依然是个SuperViewHodler，所以可以递归调用。
+     */
+    public SuperViewHolder setText(int viewId, String text) {
+        ((TextView) this.getView(viewId)).setText(text);
+        return this;
+    }
+
+    public SuperViewHolder setOnClickListener(int viewId,View.OnClickListener listener){
+        this.getView(viewId).setOnClickListener(listener);
+        return this;
     }
 }
