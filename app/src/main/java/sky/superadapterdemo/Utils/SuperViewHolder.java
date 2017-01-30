@@ -18,6 +18,7 @@ public class SuperViewHolder {
         if (convertView == null) {
             return new SuperViewHolder(context, parent, layoutId, position);
         } else {
+//            Log.i("tag","convertView.getTag()");
             SuperViewHolder viewHolder = (SuperViewHolder) convertView.getTag();
             viewHolder.mPosition = position;
             return viewHolder;

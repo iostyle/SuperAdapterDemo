@@ -23,7 +23,7 @@ public class CommonAdapter extends SuperAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        SuperViewHolder viewHolder = new SuperViewHolder(mContext, parent, R.layout.item_main, position);
+        SuperViewHolder viewHolder = SuperViewHolder.get(mContext, view, parent, R.layout.item_main, position);
 
         PhoneBean bean = (PhoneBean) mDatas.get(position);
         ((TextView) viewHolder.getView(R.id.item_main_nameTv)).setText(bean.getName());
