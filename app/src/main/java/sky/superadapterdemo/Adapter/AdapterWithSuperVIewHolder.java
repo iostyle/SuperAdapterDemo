@@ -46,9 +46,11 @@ public class AdapterWithSuperViewHolder extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         SuperViewHolder viewHolder = SuperViewHolder.get(mContext,convertView,parent,R.layout.item_main,position);
+
         PhoneBean bean = mDatas.get(position);
         ((TextView) viewHolder.getView(R.id.item_main_nameTv)).setText(bean.getName());
         ((TextView) viewHolder.getView(R.id.item_main_phoneNumberTv)).setText(bean.getPhoneNum());
+
         return viewHolder.getConvertView();
     }
 

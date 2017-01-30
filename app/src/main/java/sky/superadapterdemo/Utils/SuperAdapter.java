@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 
 import java.util.List;
 
+import sky.superadapterdemo.R;
+
 /**
  * Created by SKYMAC on 17/1/31.
  */
@@ -29,7 +31,7 @@ public abstract class SuperAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public T getItem(int position) {
         return mDatas.get(position);
     }
 
@@ -39,5 +41,11 @@ public abstract class SuperAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public abstract View getView(int position, View view, ViewGroup viewGroup);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        SuperViewHolder viewHolder = SuperViewHolder.get(mContext, convertView, parent, R.layout.item_main, position);
+        convert(viewHolder, getItem(position));
+        return viewHolder.getConvertView();
+    }
+
+    public abstract void convert(SuperViewHolder holder, T t);
 }

@@ -1,6 +1,7 @@
 package sky.superadapterdemo.Utils;
 
 import android.content.Context;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,6 @@ public class SuperViewHolder {
         if (convertView == null) {
             return new SuperViewHolder(context, parent, layoutId, position);
         } else {
-//            Log.i("tag","convertView.getTag()");
             SuperViewHolder viewHolder = (SuperViewHolder) convertView.getTag();
             viewHolder.mPosition = position;
             return viewHolder;
@@ -27,6 +27,7 @@ public class SuperViewHolder {
 
     public SuperViewHolder(Context context, ViewGroup parent, int layoutId, int position) {
         this.mViews = new SparseArray<>();
+        Log.i("tag", "mViews初始化");
         this.mPosition = position;
         mConvertView = LayoutInflater.from(context).inflate(layoutId, parent, false);
         mConvertView.setTag(this);
@@ -39,6 +40,7 @@ public class SuperViewHolder {
     public <T extends View> T getView(int viewId) {
         View view = mViews.get(viewId);
         if (view == null) {
+            Log.i("tag", "view==null");
             view = mConvertView.findViewById(viewId);
             mViews.put(viewId, view);
         }
