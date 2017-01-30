@@ -20,3 +20,10 @@
 ### 总结  
   可以使代码精简90%，方法可灵活拓展。
   
+### 关于我
+  
+个人邮箱：DeveloperSKY@163.com
+
+[GitHub主页](https://github.com/ITDreamSKY)
+
+[个人博客](http://blog.csdn.net/lty406910111)
